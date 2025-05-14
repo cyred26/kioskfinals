@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VARLEYCIOUS! </title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body style="margin:0;">
+
+  <div id="welcome-screen">
+    <div class="welcome-header">
+      <img src="logovar1.png" alt="VARLEYCIOUS Logo" class="welcome-logo">
+    </div>
+    <button id="start-order-btn">Order Now</button>
+  </div>
+
+
+  <div id="order-type-screen">
+    <h2>How would you like your order?</h2>
+    <div class="order-options">
+      <button id="dine-in-btn" class="order-option-btn">
+        <i class="fa-solid fa-utensils"></i>
+        <span>Dine In</span>
+      </button>
+      <button id="take-out-btn" class="order-option-btn">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>Take Out</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="menu-screen">
+    <header class="header container">
+      <nav class="header--menu">
+        <div class="header-left">
+          <button id="toggle-nav" class="toggle-btn">☰</button>
+        </div>
+
+        <div class="search--box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search" />
+        </div>
+
+        <div class="header-right">
+          <div class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>0</span>
+          </div>
+          <button id="toggle-cart" class="toggle-btn">🛒</button>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container main-content">
+      <section class="cover">
+        <div class="cover--overlay">
+          <h1>VARLEY <span class="glow-yellow">CIOUS!</span></h1>
+          <span class="slogan">Where size does not matter</span>
+        </div>
+      </section>
+
+      <div class="category-sidebar">
+        <div class="category-list">
+          <div class="category-item active" data-category="all">All Items</div>
+          <div class="category-item" data-category="meals">Meals</div>
+          <div class="category-item" data-category="snacks">Snacks</div>
+          <div class="category-item" data-category="drinks">Drinks</div>
+        </div>
+      </div>
+
+      <h2 class="section-heading">Menu Items</h2>
+
+      <div class="card--list">
+        <div class="card" data-category="meals">
+          <img src="sandwich.jpg" alt="VarleyWich Sandwich">
+          <h4 class="card--title">VarleyWich</h4>
+          <div class="card--price">
+            <div class="price">₱39.00</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="meals mix-match">
+          <img src="pizza.png" alt="Varleyzza Pizza">
+          <h4 class="card--title">Varleyzza</h4>
+          <div class="card--price">
+            <div class="price">₱20.00</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="snacks mix-match">
+          <img src="hotdog.png" alt="VarleyDog Hotdog">
+          <h4 class="card--title">VarleyDog</h4>
+          <div class="card--price">
+            <div class="price">₱25.00</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="meals mix-match">
+          <img src="spagh.png" alt="Varletti Spaghetti">
+          <h4 class="card--title">Varletti</h4>
+          <div class="card--price">
+            <div class="price">₱60.00</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="meals mix-match">
+          <img src="friedchicken.png" alt="VarleyCrisps Fried Chicken">
+          <h4 class="card--title">VarleyCrisps</h4>
+          <div class="card--price">
+            <div class="price">₱55.00</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="meals mix-match">
+          <img src="carbonara.png" alt="Varleynara Pasta">
+          <h4 class="card--title">Varleynara</h4>
+          <div class="card--price">
+            <div class="price">₱46.00</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="snacks mix-match">
+          <img src="nuggets.png" alt="Varleygets Nuggets">
+          <h4 class="card--title">Varleygets</h4>
+          <div class="card--price">
+            <div class="price">₱37.00</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="drinks">
+          <img src="varlecola.png" alt="VarleyCola Drink">
+          <h4 class="card--title">VarleyCola</h4>
+          <div class="card--price">
+            <div class="price">₱20.00</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="drinks">
+          <img src="varlezest.png" alt="VarleyZest Drink">
+          <h4 class="card--title">VarleyZest</h4>
+          <div class="card--price">
+            <div class="price">₱20.00</div>
+            <i class="fa-solid fa-plus add-to-cart"></i>
+          </div>
+        </div>
+      </div>
+      
+      <div id="item-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <div class="item-details">
+            <img id="modal-item-img" src="" alt="Item Image">
+            <h3 id="modal-item-name"></h3>
+            <p id="modal-item-price"></p>
+          </div>
+          <div class="item-options">
+            <div class="size-options" id="size-options">
+              <h4>Select Size</h4>
+              <div class="size-option">
+                <input type="radio" id="size-regular" name="size" value="Regular" checked>
+                <label for="size-regular">Regular</label>
+              </div>
+              <div class="size-option">
+                <input type="radio" id="size-large" name="size" value="Large">
+                <label for="size-large">Large (+₱10.00)</label>
+              </div>
+            </div>
+            <div class="add-ons">
+              <h4>Add-ons</h4>
+              <div class="add-on-option">
+                <input type="checkbox" id="add-cheese" name="add-on" value="Extra Cheese">
+                <label for="add-cheese">Extra Cheese (+₱7.00)</label>
+              </div>
+              <div class="add-on-option">
+                <input type="checkbox" id="add-sauce" name="add-on" value="Special Sauce">
+                <label for="add-sauce">Special Sauce (+₱9.00)</label>
+              </div>
+            </div>
+          </div>
+          <div class="quantity-selector">
+            <label for="item-qty-input">Quantity:</label>
+            <input type="number" id="item-qty-input" min="1" value="1">
+          </div>
+          <button id="add-to-cart-modal" class="add-to-cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="side-navigation">
+    <div class="side-nav-header">
+      <img src="logovar1.png" alt="VARLEYCIOUS Logo" class="side-nav-logo">
+      <p>237 M.L Quezon st. Brgy New Lower Bicutan, Taguig city</p>
+      <button class="close-nav-btn">✕</button>
+    </div>
+
+    <div class="side-nav-items">
+      <div class="side-nav-item" data-category="all">All Items</div>
+      <div class="side-nav-item" data-category="meals">Meals</div>
+      <div class="side-nav-item" data-category="snacks">Snacks</div>
+      <div class="side-nav-item" data-category="drinks">Drinks</div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h3>My Orders</h3>
+      <button class="close-cart-btn">✕</button>
+    </div>
+
+    <div class="order-items">
+      <div class="empty-cart">Your cart is empty</div>
+    </div>
+
+    <div class="sidebar--footer">
+      <div class="total--amount">
+        <h5>Total</h5>
+        <div class="cart-total">₱0.00</div>
+      </div>
+
+      <div class="payment-method">
+        <h4>How would you like to pay?</h4>
+        <div class="payment-options">
+          <div class="payment-option">
+            <input type="radio" id="cash" name="payment" value="Cash" checked>
+            <label for="cash"> 💵 Pay at the Counter (Cash) </label>
+          </div>
+          <div class="payment-option">
+            <input type="radio" id="gcash" name="payment" value="GCash">
+            <label for="gcash"> 📱 GCash </label>
+          </div>
+          <div class="payment-option">
+            <input type="radio" id="paymaya" name="payment" value="PayMaya">
+            <label for="paymaya"> 📱 PayMaya </label>
+          </div>
+          <div class="payment-option">
+            <input type="radio" id="paypal" name="payment" value="PayPal">
+            <label for="paypal"> 🅿️  PayPal </label>
+          </div>
+          <div class="payment-option">
+            <input type="radio" id="Credit/Debit" name="payment" value="Credit/Debit">
+            <label for="mastercard"> 💳 Credit/Debit Card </label>
+          </div>
+        </div>
+      </div>
+
+      <button class="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+  <footer style="background: #111; color: white; text-align: center; padding: 1em; margin-top: 2em;">
+    <p>About Us: <strong>VARLEYCIOUS!</strong> Where size is not the main reason why you eat, it's about how we made them. WITH LOVE </p>
+    <small>&copy; Members: Sire Albert Roldan, John Lloyd Dacara, Varley Torreon, Danielo Canon, Raman Balindong, John Paul Sergio, Ivan James Cabal
+    </small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
